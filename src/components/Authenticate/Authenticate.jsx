@@ -9,7 +9,7 @@ function Authenticate({ token }) {
     console.log("authenticating...");
     try {
       const result = await axios(
-        "https://fsa-jwt-practice.herokuappcom/authenticate",
+        "https://fsa-jwt-practice.herokuapp.com/authenticate",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       console.log(result);
