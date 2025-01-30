@@ -1,12 +1,18 @@
+import React, { useState } from "react";
+
 import Authenticate from "./components/Authenticate/Authenticate";
 import SignUpForm from "./components/SignUpForm/SignUpForm";
 
 function App() {
+  const [token, setToken] = useState(null);
   return (
-    <>
-      <SignUpForm />
-      <Authenticate />
-    </>
+    <div className="App">
+      <h2>
+        Token: <p>{token}</p>
+      </h2>
+      <SignUpForm setToken={setToken} />
+      <Authenticate token={token} />
+    </div>
   );
 }
 
